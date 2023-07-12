@@ -1,0 +1,369 @@
+﻿
+.top0 {
+    margin-top: 0px;
+}
+
+.top5 {
+    margin-top: 5px;
+}
+
+.top10 {
+    margin-top: 10px;
+}
+
+.top15 {
+    margin-top: 15px;
+}
+
+.top20 {
+    margin-top: 20px;
+}
+
+.top30 {
+    margin-top: 30px;
+}
+
+.top40 {
+    margin-top: 40px;
+}
+
+.top50 {
+    margin-top: 50px;
+}
+
+.top60 {
+    margin-top: 60px;
+}
+
+.top70 {
+    margin-top: 70px;
+}
+
+.top80 {
+    margin-top: 80px;
+}
+
+.top90 {
+    margin-top: 90px;
+}
+
+.top100 {
+    margin-top: 100px;
+}
+
+.bottom0 {
+    margin-bottom: 0px;
+}
+
+.bottom5 {
+    margin-bottom: 5px;
+}
+
+.bottom10 {
+    margin-bottom: 10px;
+}
+
+.bottom15 {
+    margin-bottom: 15px;
+}
+
+.bottom20 {
+    margin-bottom: 20px;
+}
+
+.bottom30 {
+    margin-bottom: 30px;
+}
+
+.bottom40 {
+    margin-bottom: 40px;
+}
+
+.bottom50 {
+    margin-bottom: 50px;
+}
+
+.bottom60 {
+    margin-bottom: 60px;
+}
+
+.bottom70 {
+    margin-bottom: 70px;
+}
+
+.bottom80 {
+    margin-bottom: 80px;
+}
+
+
+.left5 {
+    margin-left: 5px;
+}
+
+.left10 {
+    margin-left: 10px;
+}
+
+.left15 {
+    margin-left: 15px;
+}
+
+.left20 {
+    margin-left: 20px;
+}
+
+.left30 {
+    margin-left: 30px;
+}
+
+.left40 {
+    margin-left: 40px;
+}
+
+.left50 {
+    margin-left: 50px;
+}
+
+.left60 {
+    margin-left: 60px;
+}
+
+.right5 {
+    margin-right: 5px;
+}
+
+.right10 {
+    margin-right: 10px;
+}
+
+.right15 {
+    margin-right: 15px;
+}
+
+.right20 {
+    margin-right: 20px;
+}
+
+.right30 {
+    margin-right: 30px;
+}
+
+.right40 {
+    margin-right: 40px;
+}
+
+.right50 {
+    margin-right: 50px;
+}
+
+.right60 {
+    margin-right: 60px;
+}
+
+.border-gray {
+    outline: 1px solid gray;
+}
+
+
+.fill {
+    height: 100%;
+    min-height: 100%;
+}
+
+.vcenter {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}
+
+.font-size-12 {
+    font-size: 12px;
+}
+
+.font-size-10 {
+    font-size: 10px;
+}
+
+.min-height-200 {
+    min-height: 200px;
+}
+
+.min-height-300 {
+    min-height: 400px;
+}
+
+.min-height-400 {
+    min-height: 400px;
+}
+
+.min-width-200 {
+    min-width: 200px;
+}
+
+.min-width-300 {
+    min-width: 300px;
+}
+
+.min-width-400 {
+    min-width: 400px;
+}
+
+.min-width-500 {
+    min-width: 500px;
+}
+
+.min-width-600 {
+    min-width: 600px;
+}
+
+.min-width-700 {
+    min-width: 800px;
+}
+
+.min-width-800 {
+    min-width: 800px;
+}
+
+.min-width-900 {
+    min-width: 900px;
+}
+
+.min-width-1000 {
+    min-width: 1000px;
+}
+
+.min-width-1100 {
+    min-width: 1100px;
+}
+
+.min-width-1200 {
+    min-width: 1200px;
+}
+
+.border-left {
+    border-left: 1px solid #ddd;
+}
+
+.border-right {
+    border-right: 1px solid #ddd;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ddd;
+}
+
+.border-top {
+    border-top: 1px solid #ddd;
+}
+
+.border-all {
+    border: 1px solid #ddd;
+}
+
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.cursor_hand {
+    cursor: pointer;
+}
+
+/* Styles for Animation
+-----------------------------------------------------------*/
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.LogoContainer {
+    height: 300px;
+    background: url(/Images/Logo.png) no-repeat center center;
+}
+
+
+/* Styles logo images
+-----------------------------------------------------------*/
+
+.sim-image-block {
+    background: url(/images/sim.png) no-repeat center center;
+    width: 473px;
+    height: 390px;
+}
+
+
+.industry-image-block {
+    background: url(/images/Industry.png) no-repeat right top;
+    width: 593px;
+    height: 390px;
+}
+
+.ebooks-image-block {
+    background: url(/images/E_Books_Image.jpg) no-repeat right top;
+    width: 593px;
+    height: 420px;
+}
+
+.animation-image-block {
+    background: url(/Images/AnimationLogo.gif) no-repeat right top;
+    width: 430px;
+    height: 323px;
+}
+
+.admin-image-block {
+    background: url(/Images/AdminLogo.jpg) no-repeat right top;
+    width: 523px;
+    height: 420px;
+}
+
+
+/* Styles for Tasks panel
+-----------------------------------------------------------*/
+.tasks-panel {
+    height: 50px;
+}
+
+.color-white
+{
+    color: #fff;
+}
+
+.bg-color-blue {
+    background-color: #337ab7;
+}
+
+.bg-color-red
+{
+    background-color: #ff0000;
+}

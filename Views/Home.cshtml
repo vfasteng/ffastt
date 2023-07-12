@@ -1,0 +1,238 @@
+﻿@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="wrapper" class="container">
+
+    <link href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Images/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <script type="text/javascript" src="Scripts/fuse.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/search.js"></script>
+    <script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastVids()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+    <header>
+        <meta name="google-site-verification" content="LLdbUIP5P_DagBhtMG6kMvyeX7GZ1R1fjW7oae8pn-M" />
+        <!-- Start WOWSlider.com HEAD section -->
+        <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+        <script type="text/javascript" src="engine1/jquery.js"></script>
+        <!-- End WOWSlider.com HEAD section -->
+
+        <link href="Content/ytv.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="Scripts/ytv.js"></script>
+
+    </header>
+
+
+
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top10">
+            <div>
+                <img src="~/images/fastsite.png" width="500" height="" style="padding-bottom: 10px" alt="" />
+            </div>
+            <div style="height: 400px; width: 800px;">
+
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL3F9x9L24Lmw6nkFvszuDXT3CCn7GLtb9" frameborder="0" allowfullscreen></iframe>
+
+
+
+                <!--<div id="ytframe" style="height: 400px; width: 800px;"></div>
+
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function(event) {
+                        var controller = new YTV('ytframe', {
+                            channelID: 'UCgCxkb0Jmnt-PUdDRFZbOYA',
+                            playlist: 'PL3F9x9L24Lmw6nkFvszuDXT3CCn7GLtb9'
+                            });
+                        });
+                    </script>
+                -->
+            </div>
+            
+        </div>
+
+        <div class="col-md-6 top100">
+
+            <p>
+                <font size="5" face="arial" color="black">
+                    Welcome to the home of Engineering Simulation.
+                    Create your free account to access the Cloud trial.
+                    Choose between Desktop and Cloud solutions, or make huge savings by using them together.
+                    Download the Desktop today or go FAST in the Cloud.
+                    Create new geometry or load models from any software.
+                    (SAT models only for now, but more formats TODAY)
+                    Generate professional, custom meshes in seconds.
+                    Define and save simulations easily.
+                    Reduce waiting times and your simulation spending.
+                    Access high-speed virtual machines with no queues.</br>
+            </p>
+            <p>
+                <li>Buy the Desktop for �99 and receive:</li>
+                <li>- 20 Hours/month Cloud time for 1 Year.</li>
+                <li>- Free upgrades for life.</li>
+                <li>- Free product support for life.</li>
+                </font>
+            </p>
+        </div>
+    </div>
+    <div>
+        <body>
+            <strong><center><font size="8">Check out our Desktop launch offer.</font></center></strong>
+        </body>
+        <div><center><img src="../images/FAE_Banner.png" position="center" height="370" width="1200" /></center></div>
+    </div>
+    <div>
+        <strong><center><font size="8"><a href="fastvideo.html">Pre-Order here TODAY and NEVER pay for CAD or Simulation again!</a></font></center></strong>
+        <a name="desktop"></a> 
+        </div>
+    @Html.Partial("~/Views/BuyItems.cshtml")
+</div>
+<p>
+
+
+
+</p>
+<div>
+    <p></p>
+</div>
+
+<body>
+
+    <div>
+
+        <p>
+
+        </p>
+    </div>
+
+    <div class="mainfooter">
+
+        <div class="navigation2">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+        <div class="bottomfooter">
+            <div class="footerleft">
+                <p>Terms & Conditions</p>
+                <br>
+                <p>
+                    Terms and conditions apply to all purchases
+                    <br>
+                    for full details please <a href="../data/api terms.pdf">Read Now</a>
+                </p>
+                <br>
+                <br>
+                @Html.Partial("~/Views/Copyright.cshtml")
+            </div>
+            <div class="footerright">
+                @Html.Partial("~/Views/SocialLinks.cshtml")
+            </div>
+        </div>
+    </div>
+
+
+    @Html.Partial("~/Views/CommonPage.cshtml")
+
+	
+	<!--Model Start-->
+	<div id="fileUploadModel" class="modal fade" role="dialog">
+		<div class="show-popup modal-content">
+
+			<div data-dismiss="modal" class="close"><img src="../images/close.png" alt=""></div>
+			@using (Html.BeginForm("SaveDonorDetails", "Donate", null, FormMethod.Post, new { id = "donorPopup" }))
+            {
+                if (Model.GiftAid == null || Model.GiftAid.isContactEmail == null)
+                {
+                    Model.GiftAid.isContactEmail = false;
+                }
+				<div class="col-xs-12 popup-out">
+					<h2>How do you want to be contacted</h2>
+					<ul id="contactInfo">
+						<li><a class="clsContactByEmail clsContactInfo" href="javascript:void(0);"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>EMAIL</a></li>
+						<li><a class="clsContactByText clsContactInfo" href="javascript:void(0);"><i class="fa fa-mobile" aria-hidden="true"></i>TEXT</a></li>
+						<li><a class="clsContactByPost clsContactInfo" href="javascript:void(0);"><i class="fa fa-envelope" aria-hidden="true"></i>POST</a></li>
+						<li><a class="clsContactByCall clsContactInfo" href="javascript:void(0);"><i class="fa fa-phone" aria-hidden="true"></i>CALL</a></li>
+					</ul>
+					@if (Model.GiftAid != null && (string.IsNullOrWhiteSpace(Model.GiftAid.firstName) || string.IsNullOrWhiteSpace(Model.GiftAid.lastName)))
+					{
+						<div class="col-xs-12">
+							<div class="gift-form04-iner">
+								@Html.TextBoxFor(x => x.GiftAid.firstName, new { @class = "monthly-form-field2", @type = "text", @placeholder = "First name", @name = "FirstName", @id = "txtFirstName" })
+							</div>
+							<div class="gift-form04-iner">
+								@Html.TextBoxFor(x => x.GiftAid.lastName, new { @class = "monthly-form-field2", @type = "text", @placeholder = "Last name", @name = "LastName", @id = "txtLastName" })
+							</div>
+						</div>
+					}
+					else
+					{
+						@Html.HiddenFor(x => x.GiftAid.firstName);
+						@Html.HiddenFor(x => x.GiftAid.lastName);
+					}
+					<div class="monthly-form-main divContactByEmail col-xs-12">
+						@if (Model.GiftAid == null || Model.GiftAid.isContactEmail == null)
+						{
+							Model.GiftAid.isContactEmail = false;
+						}
+						<input type="hidden" name="contactEmail" id="hdnisContactEmail" value="false" />
+						@Html.TextBoxFor(x => x.GiftAid.email, new { @class = "monthly-form-field2", @type = "email", @style = "text-transform: none", @placeholder = "Enter your email address", @name = "Email", @id = "txtEmail" })
+					</div>
+					<div class="monthly-form-main divContactByText col-xs-12">
+						@if (Model.GiftAid.isContactSms == null)
+						{
+							Model.GiftAid.isContactSms = false;
+						}
+						<input type="hidden" name="contactSms" id="hdnisContactSms" value="false" />
+						@Html.TextBoxFor(x => x.GiftAid.mms, new { @class = "monthly-form-field2", @placeholder = "Contact", @name = "MMS", @id = "txtMms" })
+					</div>
+					<div class="monthly-form-main divContactByPost col-xs-12">
+						@if (Model.GiftAid.isContactPost == null)
+						{
+							Model.GiftAid.isContactPost = false;
+						}
+						<input type="hidden" name="contactPost" id="hdnisContactPost" value="false" />
+						@Html.TextAreaFor(x => x.GiftAid.address, new { @class = "monthly-form-field2", @placeholder = "Address", @name = "Address", @id = "txtAddress" })
+					</div>
+					<div class="monthly-form-main divContactByCall col-xs-12">
+						@if (Model.GiftAid.isContactTelephone == null)
+						{
+							Model.GiftAid.isContactTelephone = false;
+						}
+						<input type="hidden" name="contactTelephone" id="hdnisContactTelephone" value="false" />
+						@Html.TextBoxFor(x => x.GiftAid.telephone, new { @class = "monthly-form-field2", @placeholder = "Mobile Number", @name = "Telephone", @id = "txtTelephone" })
+					</div>
+
+					<h3 style="cursor:pointer" class="clsDoNotContact" data-href="@Url.Action("ProductDetail", "Product", new { id = Model.Item.itemId })">DON'T CONTACT ME   <span>x</span></h3>
+					<button type="submit" class="sub-m-btn">SUBMIT</button>
+				</div>
+            }
+		</div>
+	</div>
+	<!--Model End-->
+
+@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/plugins")
+    <script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+    @Scripts.Render("~/js")

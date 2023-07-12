@@ -1,0 +1,112 @@
+@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" class="searchTerm" placeholder="Search...">
+            <button type="submit" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+    <header>
+        
+    </header>
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top10">
+            <div>
+                <img src="~/images/fastsite.png" width="500" height="" style="padding-bottom: 10px" alt="" />
+            </div>
+           
+        </div>
+
+        <div class="col-md-6 top100">
+
+            <script>
+				(function() {
+					var cx = '018393029992408983795:eot1e_cqp0s';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				})();
+			</script>
+			<gcse:searchresults-only></gcse:searchresults-only>
+
+        </div>
+    </div>
+    <div>
+        <body>
+            <strong><center><font size="12">Download for Desktop or use 3D CAD for Cloud</font></center></strong>
+        </body>
+
+    </div>
+    @Html.Partial("~/Views/BuyItems.cshtml")
+</div>
+<p>
+
+
+
+</p>
+<div>
+    <p></p>
+</div>
+
+<body>
+
+    <div>
+
+        <p>
+
+        </p>
+    </div>
+
+    <div class="mainfooter">
+
+        <div class="navigation2">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+        <div class="bottomfooter">
+            <div class="footerleft">
+                <p>Terms & Conditions</p>
+                <br>
+                <p>
+                    Terms and conditions apply to all purchases
+                    <br>
+                    for full details please <a href="../data/api terms.pdf">Read Now</a>
+                </p>
+                <br>
+                <br>
+                @Html.Partial("~/Views/Copyright.cshtml")
+            </div>
+            <div class="footerright">
+                @Html.Partial("~/Views/SocialLinks.cshtml")
+            </div>
+        </div>
+    </div>
+
+
+    @Html.Partial("~/Views/CommonPage.cshtml")
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/plugins")
+    <script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+    @Scripts.Render("~/js")

@@ -1,0 +1,91 @@
+@model FastEngSite.
+Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="Content/jquery.horizontal.scroll.css" />
+<link rel="stylesheet" type="text/css" href="Content/styles.css">
+
+<script type="text/javascript" src="Scripts/fuse.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/search.js"></script>
+	<script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastModels()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top30">
+            <div>
+                <img src="~/images/fastsite.png" width="200" height="" style="padding-bottom: 10px" alt="" />
+            </div>
+            <div>
+                <iframe width="1000" height="650" src="https://www.youtube.com/embed/videoseries?list=PL3F9x9L24Lmw6nkFvszuDXT3CCn7GLtb9" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-6 top30">
+            <div class="animation-image-block">
+                <p>
+                   
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/BuyItems.cshtml")
+</div>
+
+<div class="mainfooter">
+
+    <div class="navigation2">
+        @Html.Partial("~/Views/MenuNavigation.cshtml")
+    </div>
+    <div class="bottomfooter">
+        <div class="footerleft">
+            <p>Terms & Conditions</p>
+            <br>
+            <p>
+                Terms and conditions apply to all purchases
+                    <br>
+                for full details please <a href="#">Read Now</a>
+            </p>
+            <br>
+            <br>
+            @Html.Partial("~/Views/Copyright.cshtml")
+        </div>
+        <div class="footerright">
+            @Html.Partial("~/Views/SocialLinks.cshtml")
+        </div>
+    </div>
+</div>
+</div>
+
+
+@Html.Partial("~/Views/CommonPage.cshtml")
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/plugins")
+<script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+@Scripts.Render("~/js")

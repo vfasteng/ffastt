@@ -1,0 +1,170 @@
+@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "Azure Storage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="Scripts/fuse.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/search.js"></script>
+	<script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastVids()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+
+    <!-- Page Content -->
+    <div id="main-container" class="container hide top60" ng-controller="storageCntrl">
+        <!-- Information Row -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Used space: {{vm.StorageUsageSpaceText}}</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>50GB for £50 per year:</h2>
+                <form action="@Model.PaypalUrl" method="post" class="form-inline">
+                    <div class="form-group">
+                        <input type="image" src="/Images/buynow.png" alt="Submit Form" />
+                        <input type="hidden" name="cmd" value="_xclick" />
+                        <input type="hidden" name="business" value="@Model.PayPalBusiness" />
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <input type="hidden" name="item_name" value="ProductStorage50GB" />
+                        <input type="hidden" name="amount" value="50.00" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Main Row -->
+        <div class="row top20">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <h2>Folders</h2>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary top10 bottom10" ng-click="vm.AddFolderDialog()">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Add Folder
+                        </button>
+                        <button class="btn btn-primary top10 bottom10" ng-click="vm.DeleteFolder()">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            Delete Folder
+                        </button>
+                    </div>
+                    <div class="row right10">
+                        <div id="treeFolder" ng-show="!vm.IsLoadingFolder">
+                        </div>
+                        <div ng-show="vm.IsLoadingFolder" class="top40 left40">
+                            <img class="vcenter img-responsive" src="~/Images/Loader.gif" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <h2>Files</h2>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <button id="storageFileUploadBtn" class="btn btn-large btn-primary top10 bottom10">Add File</button>
+                        </div>
+                        <div class="col-md-8">
+                            <div id="storageFileProgressOuter" class="progress progress-striped active" style="display: none;">
+                                <div id="storageFileProgressBar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="list-group">
+                            <table class="table table-bordered">
+                                <thead class="font-bold">
+                                    <tr>
+                                        <td>File</td>
+                                        <td>Download</td>
+                                        <td>Link to CAD</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                </thead>
+                                <tbody ng-show="!vm.IsLoading">
+                                    <tr ng-repeat="file in vm.Files track by $index">
+                                        <td>{{file.Name}}</td>
+                                        <td>
+                                            <button class="btn btn-default" ng-click="vm.Download(file)">
+                                                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                                                Download
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-default" ng-click="vm.GotoCad(file)">
+                                                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                                                Goto Cad
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-default" ng-click="vm.Delete(file)">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div ng-show="vm.IsLoading" class="top40 left40">
+                            <img class="vcenter img-responsive" src="~/Images/Loader.gif" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        @*Dialog Folder Name*@
+        <div id="folder-name-dialog" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Folder Name</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group col-sm-12">
+                            <input class="modal-text form-control" ng-model="vm.DialogProjectName" type="text" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button ng-click="vm.AcceptCreateFolderDialog(vm.DialogProjectName)" type="button" data-dismiss="modal" class="btn btn-default">Ok</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@Html.Partial("~/Views/Home/ModalDialog.cshtml")
+@Html.Partial("~/Views/SimulationGallerySetup.cshtml")
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/plugins")
+@Scripts.Render("~/js")

@@ -1,0 +1,104 @@
+@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="Content/jquery.horizontal.scroll.css" />
+<link rel="stylesheet" type="text/css" href="Content/styles.css">
+
+<script type="text/javascript" src="Scripts/fuse.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/search.js"></script>
+	<script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastVids()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top30">
+            <div>
+                <img src="images/FASTSITE.png" width="500" height="" style="padding-bottom: 10px" alt="" />
+            </div>
+            <div>
+                <iframe width="550" height="280" src="https://www.youtube.com/embed/fomfXPi3J0A?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-6 top100">
+
+            <p>
+                <font size="5" face="arial" color="black">
+                    What is FastEngineeringAnalysis.com?<br>
+                    fastengineeringanalysis.com is going to be a total service for Engineers & Designers where they can access everything needed for product development in one place, and for a great price. Simply create a free account, pay the license fee, and start working.<br>
+                    Primarily, fastengineeringanalysis.com is a 3D Simulation tool with a difference, and soon will support all CAD formats (via Onshape).<br>
+                    Other services are to include a 3D Model library, 3D-Printing service and 3D-scanning which can be used by any Skype-capable device.
+                    An integrated Materials library and Report-writing app complete the total service, and you can see that there is not much an Engineer can't get done here.
+                    
+                    The site runs on Microsoft’s Azure Cloud platform which means that the technology and security are the best available.<br>
+                    CONTACT: <strong>info@fastengineeringanalysis.com</strong>
+
+                 </font>
+            </p>
+        </div>
+    </div>
+    </div>
+
+    @Html.Partial("~/Views/BuyItems.cshtml")
+<p>
+
+
+
+</p>
+
+<div class="mainfooter">
+
+    <div class="navigation2">
+        @Html.Partial("~/Views/MenuNavigation.cshtml")
+    </div>
+
+    <div class="bottomfooter">
+        <div class="footerleft">
+            <p>Terms & Conditions</p>
+            <br>
+            <p>
+                Terms and conditions apply to all purchases
+                    <br>
+                for full details please <a href="../data/api terms.pdf">Read Now</a>
+            </p>
+            <br>
+            <br>
+            @Html.Partial("~/Views/Copyright.cshtml")
+        </div>
+        <div class="footerright">
+            @Html.Partial("~/Views/SocialLinks.cshtml")
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/CommonPage.cshtml")
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/plugins")
+<script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+@Scripts.Render("~/js")

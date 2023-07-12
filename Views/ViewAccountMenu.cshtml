@@ -1,0 +1,21 @@
+﻿@model FastEngSite.Controllers.MainPageData
+
+<div class="topbar">
+
+    @if (!Request.IsAuthenticated)
+    {
+        <a id="btn-login" href="#">
+            <img src="images/login.png" alt="login-button" />
+
+        </a>
+        <a id="btn-register" href="#">
+            <img src="images/register.png" alt="register-button" />
+        </a>
+    }
+    else
+    {
+        <label class="right10">@Model.UserName</label>
+        <button id="btn-signout" type="button" class="btn btn-default">Sign Out</button>
+    }
+
+</div>

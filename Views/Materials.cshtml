@@ -1,0 +1,321 @@
+@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="Scripts/fuse.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/search.js"></script>
+	<script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastVids()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top30">
+            <div>
+                <img src="images/logo.png" width="201" height="79" style="padding-bottom: 10px" alt="" />
+            </div>
+            <div>
+                <iframe width="430" height="275" src="https://www.youtube.com/embed/fomfXPi3J0A?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-6 top30">
+            <div class="sim-image-block">
+                <p>
+                    Quick-View Tables<br>
+                    <strong>fastengineeringanalysis.com</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="secondblock row">
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>General Materials</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Free Download Link</li>
+                            <li>
+                                <a href="/Data/Materials/Materialtable.docx" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Properties of steel</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Free Download Link</li>
+                            <li>
+                               <a href="/Data/Materials/Properties of Steel.docx" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Copper based alloys</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                         <ul>
+                            <li>Free Download Link</li>
+                            <li>
+                               <a href="/Data/Materials/Properties of Copper Based Alloys.docx" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Properties of plastics</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Free Download Link</li>
+                            <li>
+                               <a href="/Data/Materials/General Properties of Plastics.docx" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="secondblock row top20">
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Properties of Aluminium</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Link</li>
+                            <li>
+                                <a href="http://www.aluminiumdesign.net/why-aluminium/properties-of-aluminium/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Material Selection Charts</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Link</li>
+                            <li>
+                                <a href="http://www-materials.eng.cam.ac.uk/mpsite/interactive_charts/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Metric Bolt Strength</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Link</li>
+                            <li>
+                                <a href="http://euler9.tripod.com/bolt-database/22.html" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>Bolt-torque calculator</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>Link</li>
+                            <li>
+                                <a href="http://www.futek.com/boltcalc.aspx" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grenadeslider">
+
+    <!--Sheet Slider-->
+    <div class="sheet-slider" id="sh-cinco">
+        <input id="s1" class="slide" type="radio" name="slide" checked="checked" />
+        <input id="s2" class="slide" type="radio" name="slide" />
+        <input id="s3" class="slide" type="radio" name="slide" />
+        <input id="s4" class="slide" type="radio" name="slide" />
+        <input id="s5" class="slide" type="radio" name="slide" />
+        <div class="conten">
+            <div class="tab">
+                <img src="images/engine_inside.png" />
+                <div class="text">
+                    <h3>ALL CONTACT THROUGH</h3>
+                    <span>info@fastengineeringanalysis.com<a href="#">link</a></span>
+                </div>
+            </div>
+
+            <div class="tab">
+                <img src="images/explosion.png" />
+                <div class="text">
+                    <h3>ALL CONTACT THROUGH</h3>
+                    <span>info@fastengineeringanalysis.com</span>
+                </div>
+            </div>
+
+            <div class="tab">
+                <img src="images/banner2.jpg" />
+                <div class="text">
+                    <h3>ALL CONTACT THROUGH</h3>
+                    <span>info@fastengineeringanalysis.com</span>
+                </div>
+            </div>
+
+            <div class="tab">
+                <img src="images/engine_power.png" />
+                <div class="text">
+                    <h3>ALL CONTACT THROUGH</h3>
+                    <span>info@fastengineeringanalysis.com<a href="#">link</a></span>
+                </div>
+            </div>
+
+            <div class="tab">
+                <img src="images/banner4.jpg" />
+                <div class="text">
+                    <h3>Cat and Girl</h3>
+                    <span>Titulo segundario, solo texto</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sh-btns">
+            <label for="s1"></label>
+            <label for="s2"></label>
+            <label for="s3"></label>
+            <label for="s4"></label>
+        </div>
+    </div>
+</div>
+<div class="carotitle">
+    <img src="images/ourwork.png" width="254" height="37" alt="" />
+</div>
+
+@if (Request.IsAuthenticated)
+{
+    <button id="id-open-gallery-setup" class="btn btn-default btn-lg left30 bottom30">
+        <span class="cursor-pointer glyphicon glyphicon-cog" aria-hidden="true"></span>
+        Setup Gallery
+    </button>
+}
+
+@Html.Partial("~/Views/OurWorkSlider.cshtml")
+
+
+<div class="mainfooter">
+
+    <div class="navigation2">
+        @Html.Partial("~/Views/MenuNavigation.cshtml")
+    </div>
+    <div class="bottomfooter">
+        <div class="footerleft">
+            <p>Terms & Conditions</p>
+            <br>
+            <p>
+                Terms and conditions apply to all purchases
+                    <br>
+                for full details please <a href="#">Read Now</a>
+            </p>
+            <br>
+            <br>
+            @Html.Partial("~/Views/Copyright.cshtml")
+        </div>
+        <div class="footerright">
+            @Html.Partial("~/Views/SocialLinks.cshtml")
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/CommonPage.cshtml")
+
+@Html.Partial("~/Views/SimulationGallerySetup.cshtml")
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/plugins")
+<script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+@Scripts.Render("~/js")

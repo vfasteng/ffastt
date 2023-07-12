@@ -1,0 +1,265 @@
+@model FastEngSite.Controllers.MainPageData
+@{
+    ViewBag.Title = "FASTEngineeringAnalysis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="Content/jquery.horizontal.scroll.css" />
+<link rel="stylesheet" type="text/css" href="Content/styles.css">
+
+<script type="text/javascript" src="Scripts/fuse.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/search.js"></script>
+	<script type="text/javascript" src="Scripts/searchRouting.js"></script>
+
+<div id="wrapper" class="container">
+
+    <div class="mainheader">
+        @Html.Partial("~/Views/ViewAccountMenu.cshtml")
+
+        <div class="searchblock">
+            <input type="text" id="searchTerm" class="searchTerm" placeholder="Search...">
+            <button onclick="searchFastVids()" class="searchicon" style="border: 0; background: transparent; display: inline-block">
+                <img src="images/searchicon.png" width="20" height="20" alt="submit" />
+            </button>
+        </div>
+
+
+        <div class="navigation">
+            @Html.Partial("~/Views/MenuNavigation.cshtml")
+        </div>
+
+    </div>
+
+    <div class="firstblock row bottom40">
+        <div class="col-md-6 top30">
+            <div>
+                <img src="images/fastsite.png" width="500" height="" style="padding-bottom: 10px" alt="" />
+            </div>
+            <div>
+                <iframe width="550" height="280" src="https://www.youtube.com/embed/fomfXPi3J0A?rel=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="col-md-6 top30">
+            
+                <p><font size="5" face="comic sans ms" color="black">
+    Industrial Reports, e-books, Professional Articles, Academic & Technical Blogs and much more....
+    </font></p>
+                <button class="btn btn-default bg-color-red color-white" onclick="document.location.href='/E-LIBRARY';">
+                    <span>E-LIBRARY</span>
+                </button>
+            <div class="industry-image-block">
+            </div>
+        </div>
+    </div>
+
+    <div class="secondblock row">
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>THE ENGINEER</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.theengineer.co.uk</li>
+                            <li>
+                                <a href="http://www.theengineer.co.uk/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>engineering toolbox</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.engineeringtoolbox.com</li>
+                            <li>
+                                <a href="http://www.engineeringtoolbox.com/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>manufacturing</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.sme.org</li>
+                            <li>
+                                <a href="http://www.sme.org/manufacturingengineering/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>engineering-magazine</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.eurekamagazine.co.uk</li>
+                            <li>
+                                <a href="http://www.eurekamagazine.co.uk/design-engineering-magazine/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secondblock row top20">
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>car design news</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.cardesignnews.com</li>
+                            <li>
+                                <a href="http://www.cardesignnews.com" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>car body design</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>carbodydesign.com</li>
+                            <li>
+                                <a href="http://www.carbodydesign.com" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>composite-materials</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.compositesuk.co.uk</li>
+                            <li>
+                                <a href="http://www.compositesuk.co.uk/composite-materials/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quarterblock col-md-3">
+            <div class="whole">
+                <div class="type-mid">
+                    <p>machine tools</p>
+                </div>
+                <div class="plan">
+                    <div class="content">
+                        <ul>
+                            <li>www.machinetools.com</li>
+                            <li>
+                                <a href="http://www.machinetools.com/" target="_blank">
+                                    <img src="images/go.png" width="129" height="37" style="padding-top: 9px" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+
+
+
+
+</p>
+
+            
+
+        
+
+
+<div class="mainfooter">
+
+    <div class="navigation2">
+        @Html.Partial("~/Views/MenuNavigation.cshtml")
+    </div>
+    <div class="bottomfooter">
+        <div class="footerleft">
+            <p>Terms & Conditions</p>
+            <br>
+            <p>
+                Terms and conditions apply to all purchases
+                    <br>
+                for full details please <a href="#">Read Now</a>
+            </p>
+            <br>
+            <br>
+            @Html.Partial("~/Views/Copyright.cshtml")
+        </div>
+        <div class="footerright">
+            @Html.Partial("~/Views/SocialLinks.cshtml")
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("~/Views/CommonPage.cshtml")
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/plugins")
+<script src="/Scripts/PureJs/jquery.horizontal.scroll.js" type="text/javascript"></script>
+
+@Scripts.Render("~/js")
